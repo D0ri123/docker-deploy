@@ -2,7 +2,6 @@ version: '3'
 services:
 
   web:
-    platform: linux/amd64
     container_name: web
     image: leeseolhui/server-web
     expose:
@@ -11,11 +10,9 @@ services:
       - 8080:8080
 
   nginx:
-    platform: linux/amd64
     container_name: nginx
     image: leeseolhui/server-nginx
     ports:
       - 80:80
     depends_on:
       - web
-# arm64 환경 넣어주기
